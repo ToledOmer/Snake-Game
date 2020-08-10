@@ -1,4 +1,5 @@
 sound -
+
        1. tried to use the windows.h library but **failed** because im using Ubuntu.
        2. installing SDL2 library.
        3. many attempts in order to adjust the CMakeLists.txt file to the SDL2 library.
@@ -14,10 +15,12 @@ sound -
 
 
 camera and screens -
+
        1.working with camera_translation , camera_eye , camera_up
+       
         a.camera_translation is the location of the eye , which is the center of snake's head (given by multiplying the whole
          translation matrix of the cylinder from the bottom to the head) + 0.83(rotation vector of the head).
-
+         
         b.camera_eye - camera_eye is the direction which the eye are looking to  (vector),
           after some thinking the vector we are looking for is the same vector from assignment 4, the same "a ,b ,c " of the face A0
           which we calculated by getting the rotation matrix of the snake head(by multiplying the rotation matrices of
@@ -25,16 +28,21 @@ camera and screens -
 
         c. camera_up - similarly to "camera_eye" , we are looking for the "a ,b ,c " of the face A1 (as described in assignment 4),
             we get this vector in a similar way we found A0,
-
-        some problem we encountered:
+            
+ some problem we encountered:
+ 
          i. resizing the windows  - we accidentally used , 0 and 1 , instead of using unsigned int "right view" & "left view"
+         
          ii. A few things need an adjustment because splitting the screen the same as libigl 108 tutorial (most of the function related to the
             core is in the viewer as opposed to our project)
+            
+            
          iii. after collusion we set the mesh invisible and between levels we load new meshes, we need to make sure they visible in the
             right viewport because of the differences between our appendMesh() and the libigl 108 appendMesh()
 
 
 Video Playing -
+
               1.we wanted to play videos
                 a. at the begging
                 b. between stages
